@@ -7,7 +7,7 @@ public class ShuffleDepTrees {
 
 	public static void main(String[] args) {		
 		if (args.length < 2) {
-			System.out.println("Usage: java posTaggerTool.converter.ShuffleDepTrees inputFile outputFile");
+			System.out.println("Usage: java uniDep.util.ShuffleDepTrees inputFile outputFile");
 			return;
 		}
 		
