@@ -77,11 +77,20 @@ public class DepTools {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
 			
-			for (List<String> sentence : sentences) {
+			if (sentences.size() > 0) {
+				List<String> sentence = sentences.get(0);
 				for (String wordLine : sentence) {
 					writer.write(wordLine + '\n');
 				}
+			}
+			
+			for (int i = 1; i < sentences.size(); i++) {
+				List<String> sentence = sentences.get(i);
+				
 				writer.write('\n');
+				for (String wordLine : sentence) {
+					writer.write(wordLine + '\n');
+				}
 			}
 			
 			writer.flush();
