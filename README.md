@@ -2,7 +2,7 @@
 Converters dependency trees from Szeged Dependency Treebank to Universal Dependency format
 
 # Download
-https://drive.google.com/open?id=16hQANvyqCVJHx9AI-E-hytCedcCKtcxS
+https://github.com/zsozso21/HungarianUnidepConverter/releases/download/v1.0.1/HunUnidepConverter_v1.0.1.jar
 
 # Usage
 java -jar HunUnidepConverter.jar inputFile outputFile [msd]
