@@ -2,9 +2,11 @@ package uniDep.util;
 
 import is2.data.SentenceData09;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,12 +50,11 @@ public class DepTools {
 		List<List<String>> sentences = new ArrayList<List<String>>();
 		
 		try {
-			Scanner sc = new Scanner(new File(fileName));
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
 			
 			String line;
 			List<String> sentence = new ArrayList<String>();
-			while (sc.hasNextLine()) {
-				line = sc.nextLine();
+			while ((line = br.readLine()) != null) {
 				if (line.length() == 0) {
 					sentences.add(sentence);
 					sentence = new ArrayList<String>();
@@ -64,8 +65,11 @@ public class DepTools {
 			
 			sentences.add(sentence);
 			
-			sc.close();
+			br.close();
 		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
